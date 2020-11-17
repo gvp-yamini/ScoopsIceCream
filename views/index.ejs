@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+   <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <style>
+      header{
+       
+         background-image: url('images/background.png') ;
+         background-repeat: no-repeat; 
+         background-size:cover;
+      }
+
+       #DIV {
+         margin-top: 50px;
+    }
+
+    @keyframes move {
+    50% {font: 40px bold;}
+    }  
+    </style>
+  </head>
+
+  <body>
+    <header>
+    <% include client/header %> 
+    <div id="DIV" class="container">
+      <h1 >Scoops Ice Cream Shop</h1>
+    </div>
+  </header>
+ 
+  <main>
+    <% include client/view-category %> 
+
+    <div class="container">
+      <% include client/latestProduct %> 
+    </div>
+
+  </main>
+    
+    <footer>
+      <% include client/footer %> 
+    </footer>
+  </body>
+</html>

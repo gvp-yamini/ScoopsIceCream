@@ -1,0 +1,28 @@
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+color: #00B7FF;
+}
+
+/* -------------------- */
+
+img { max-width: 100%; }
+
+body {
+margin: 0;
+font-family: Arial;
+}
+
+footer {
+    text-align: center;
+    background-color: orange;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+html { font-size:100%; }
+

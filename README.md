@@ -1,2 +1,6 @@
-# ScoopsIceCream
-Online Ice Cream Shopping Cart
+
+Demo credentials
+
+Customer:
+- User: `user`
+- Password: `User@123`

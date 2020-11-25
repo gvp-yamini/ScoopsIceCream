@@ -44,52 +44,13 @@ function checkEmail(req, res, next){
       next()
     })
   }
-
-   function validate(req, res, next){
-
-          var email = req.body.email;
-          const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          if(!re.test(email.toLowerCase())){
-             return res.render('client/userSignup', { title: 'Scoops Ice Cream Shop', msg:"Invalid Email" });
-          }
-
-          var phone = req.body.phone;
-          const rephone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-      
-          if(!rephone.test(phone)){
-             return res.render('client/userSignup', { title: 'Scoops Ice Cream Shop', msg:"Invalid Phone Number" });
-          }
-          var password = req.body.password;
-          // Create an array and push all possible values that you want in password
-          var matchedCase = new Array();
-          matchedCase.push("[$@$!%*#?&]"); // Special Charector
-          matchedCase.push("[A-Z]");      // Uppercase Alpabates
-          matchedCase.push("[0-9]");      // Numbers
-          matchedCase.push("[a-z]");     // Lowercase Alphabates
-
-          // Check the conditions
-          var ctr = 0;
-          for (var i = 0; i < matchedCase.length; i++) {
-              if (new RegExp(matchedCase[i]).test(password)) {
-                  ctr++;
-              }
-          }
-          switch (ctr) {
-              case 0:
-              case 1:
-              case 2:
-                  return res.render('client/userSignup', { title: 'Scoops Ice Cream Shop', msg:"Very Weak Password" });
-                  break;
-          }
-      next()
-    }
   
   router.get('/',function(req,res, next){
         res.render('client/userSignup',{title:'Scoops Ice Cream Shop',msg:''})
   })
 
   
-  router.post('/', validate,checkUserName,checkEmail, function(req, res, next) {
+  router.post('/',checkUserName,checkEmail, function(req, res, next) {
     var username = req.body.uname;
     var fName = req.body.fName;
     var email = req.body.email;
@@ -99,27 +60,21 @@ function checkEmail(req, res, next){
     var password = req.body.password;
     var confpassword = req.body.confpassword;
     
-  
-    if(password != confpassword) {
-      res.render('client/userSignup', { title: 'Scoops Ice Cream Shop', msg:'Password Not Matched!' });
-    }
-    else {
-      password = bcrypt.hashSync(req.body.password, 10)
-      var signupDetails = new signupModel({
-        username:username,
-        fName:fName,
-        email:email,
-        phone:phone,
-        city:city,
-        address:address,
-        password:password,
-      });
-  
-      signupDetails.save((err,doc)=>{
-        if (err) throw err;
-        res.render('client/userSignup', { title: 'Scoops Ice Cream Shop', msg:'User Register Successfully' });
-      });
-    }
+    password = bcrypt.hashSync(req.body.password, 10)
+    var signupDetails = new signupModel({
+      username:username,
+      fName:fName,
+      email:email,
+      phone:phone,
+      city:city,
+      address:address,
+      password:password,
+    });
+
+    signupDetails.save((err,doc)=>{
+      if (err) throw err;
+      res.render('client/userSignup', { title: 'Scoops Ice Cream Shop', msg:'User Register Successfully' });
+    });
     
   });
   

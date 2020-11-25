@@ -19,17 +19,6 @@ var bcrypt = require('bcryptjs');
 
   var jwt = require('jsonwebtoken');
   
-  // function checkLoginUser(req, res, next) {
-  //   var userToken = localStorage.getItem("userToken");
-  //   try {
-  //     var decoded = jwt.verify(userToken, 'loginToken');
-  //   } catch(err) {
-  //     res.redirect('/admin/login')
-  //   }
-  //   next()
-  // }
-
-  
   router.get('/', function(req,res, next){
     var loginUser = localStorage.getItem('loginUser')
     if(loginUser) {
@@ -54,8 +43,6 @@ var bcrypt = require('bcryptjs');
       var getPassword = data.password;
       if (bcrypt.compareSync(password, getPassword)) {
         var token = jwt.sign({ userId: getUserId }, 'loginToken');
-        // localStorage.setItem('userToken', token);
-        // localStorage.setItem('loginUser', userName);
         req.session.adminName = userName
   
         res.redirect('/admin/dashboard');

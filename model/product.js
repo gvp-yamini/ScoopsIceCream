@@ -5,17 +5,8 @@ var Schema = mongoose.Schema
 
 var productSchema =new mongoose.Schema({
 
-    brand: {type:String, required:true},
-    ram: {type:String, required:true},
-    rom: {type:String, required:true},
-    rearcamera: {type:String, required:true},
-    fontcamera: {type:String, required:true},
-	battery: {type:String, required:true},
-    simSupport: {type:String, required:true},
-    color: {type:String, required:true},
-    operatingSystem: {type:String, required:true},
-    warranty: {type:String, required:true},
-    pta: {type:String, required:true},
+    product: {type:String, required:true},
+    details: String,
     price: {type:Number, required:true},
     images: [String],
     category: String,

@@ -37,9 +37,6 @@ img:hover {
         <%if (categoryRecord.length >0){ %>
           <% categoryRecord.forEach(function(row){ %>
             <div class="col-md-2">
-              <% if(row.image){ %>
-              <img src="/uploads/<%= row.image %>" alt="image" style="max-width:200px;height: 120px; margin:5px auto; ">
-              <% } %> 
               <a href="/admin/Brand/<%= row.name %> ">
                <h4 class="title" ><%= row.name %> </h4>
               </a>

@@ -48,8 +48,7 @@ var bcrypt = require('bcryptjs');
     var id = req.params.id;
     categoryModel.findByIdAndUpdate(id,{
       name:req.body.categoryName,
-      details:req.body.categorydetails,
-      image: req.file.filename
+      details:req.body.categorydetails
     }).exec(function(err){
       if(err) throw err
   

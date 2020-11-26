@@ -42,17 +42,8 @@ next()
     var loginUser = req.session.adminName
 
       var productDetails = new productModel({
-        brand: req.body.brand,
-        ram: req.body.ram,
-        rom: req.body.rom,
-        rearcamera: req.body.rearcamera,
-        fontcamera: req.body.fontcamera,
-        battery: req.body.battery,
-        simSupport: req.body.simSupport,
-        color: req.body.color,
-        operatingSystem: req.body.operatingSystem,
-        warranty: req.body.warranty,
-        pta: req.body.pta,
+        product: req.body.product,
+        details:req.body.productdetails,
         price: req.body.price,
         category:req.body.category,      
 

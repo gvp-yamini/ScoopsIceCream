@@ -6,7 +6,6 @@ var Schema = mongoose.Schema
 var categorySchema =new mongoose.Schema({
 	name: String,
 	details: String,
-	image:String,
 	created_at: {type:Date, required:true, default:Date.now}
 });
 

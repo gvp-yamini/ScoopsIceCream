@@ -38,8 +38,7 @@ var storage = multer.diskStorage({
 
     var categoryDetails = new categoryModel({
         name:req.body.categoryName,
-        details: req.body.categorydetails,
-        image: req.file.filename
+        details: req.body.categorydetails
     })
     categoryDetails.save(function(err, data){
         if(err) throw err

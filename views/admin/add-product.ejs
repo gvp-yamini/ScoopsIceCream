@@ -25,51 +25,14 @@
   <form class="form-inline" action="/admin/add-product" method="post"  enctype="multipart/form-data">
 
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Brand Name" name="brand" required>
+      <input type="text" class="form-control" placeholder="Product Name" name="product" required>
     </div>
 
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="RAM" name="ram" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="ROM" name="rom" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Rear Camera" name="rearcamera" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Font Camera" name="fontcamera" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Battery" name="battery" required>
-    </div>
-
-    <!-- <div class="form-group">
-        <input type="text" class="form-control" placeholder="Secreen Resolution" name="secreenResolution" required>
-    </div> -->
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Sim Support" name="simSupport" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Color" name="color" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Operating System" name="operatingSystem" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Warranty" name="warranty" required>
-    </div>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="PTA" name="pta" required>
+      <label for="categorydetails" class="col-md-3 control-label">Product Details</label>
+      <div class="col-md-9">
+        <textarea type="text" class="form-control" name="productdetails" placeholder=" Enter Details" id="editor" cols="30" rows="10"></textarea>
+      </div>
     </div>
 
     <div class="form-group">

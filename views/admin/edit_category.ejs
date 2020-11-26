@@ -21,7 +21,7 @@
         </div>
 
         <div class="container">
-          <a class="btn btn-info" href="/admin/ViewCategory" >View Captegory</a>
+          <a class="btn btn-info" href="/admin/ViewCategory" >View Category</a>
         
 
     <h1 style="text-align: center;">Update Category</h1>
@@ -52,19 +52,12 @@
                   </div>
               </div>
 
-                <div class="form-group">
-                  <label for="icode" class="col-md-3 control-label" > Category Image</label>
-                  <div class="col-md-9">
-                      <input type="file" class="form-control" name="file" value="<%= categoryRecord.image %>" required>
-                  </div>
-              </div> 
-
               <input type="hidden" name="id" value="<%= categoryRecord._id %> ">
 
               <div class="form-group">
                   <!-- Button -->                                        
                   <div class="col-md-offset-3 col-md-9">
-                  <input type="submit" name="submit" value="Update Captegory" class="btn btn-primary">   
+                  <input type="submit" name="submit" value="Update Category" class="btn btn-primary">   
                   </div>
               </div>
           </form>

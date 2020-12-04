@@ -7,6 +7,8 @@ var category =categoryModel.find({});
 var productModel = require('../model/product');
 var product =productModel.find({}); 
 
+
+
 var contactModel = require('../model/contactUs')
 var contact = contactModel.find({})
 
@@ -17,9 +19,11 @@ router.use(express.static(__dirname+"./public/"));
 
       category.exec(function(err, data){
         if (err) throw err
-        res.render('client/header',{title:'Mobile',categoryRecord:data,loginUserInfo:loginUser, success:''})
+        res.render('client/header',{title:'Scoops',categoryRecord:data,loginUserInfo:loginUser, success:''})
       })
   })
+
+
 
   router.post('/', function(req, res, next){
     var loginUser = req.session.userId
@@ -41,10 +45,11 @@ router.use(express.static(__dirname+"./public/"));
 
     productModel.find(fltrParameter).exec(function(err,data){
         if(err) throw err
-        res.render('client/view-product',{title:'Mobile', categoryRecord:cat, prodectRecord:data,pages:pages,loginUserInfo:loginUser })
+        res.render('client/view-product',{ prodectRecord:data,pages:pages,loginUserInfo:loginUser })
     })
   })
   })
+
 
 
   module.exports = router;

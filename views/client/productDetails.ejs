@@ -34,19 +34,19 @@
                     <div> 
                       <table style="width:50%; float:right;" class="table">
                         <tr>
-                          <th><b>Brand: </b> </th>
+                          <th><b>Name: </b> </th>
                           <td> <i class="fa fa-mobile-phone" style="font-size: x-large;"></i>
-                            <%= prodectRecord[i].brand %></td>
+                            <%= prodectRecord[i].product %></td>
                         </tr>
 
                         <tr>
-                          <th> <b> Warranty: </b> </th>
-                          <td> <img src="/images/warranty.png" style="width: 6%;" alt="PTA approvet"> <%= prodectRecord[i].warranty %> </td>
+                          <th> <b> Description: </b> </th>
+                          <td> <img src="/images/warranty.png" style="width: 6%;" alt="PTA approvet"> <%= prodectRecord[i].details %> </td>
                         </tr>
 
                         <tr>
-                          <th><b> PTA: </b> </th>
-                          <td> <img src="/images/pta.png" style="width: 6%;" alt="PTA approvet"> <%= prodectRecord[i].pta %></td>
+                          <th><b> Category: </b> </th>
+                          <td> <img src="/images/pta.png" style="width: 6%;" alt="PTA approvet"> <%= prodectRecord[i].category %></td>
                         </tr>
 
                         <tr>
@@ -72,66 +72,7 @@
                       
                     </div>
                   </div>
-                      <div class="container">
-                        <h3>Specificatin</h3>
-                        <table style="width:50%;" class="table">
-                          <tr>
-                            <th> <b>Brand: </b> </th>
-                            <td> <%= prodectRecord[i].brand %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> RAM: </b> </th>
-                            <td> <%= prodectRecord[i].ram %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> Rear Camera: </b> </th>
-                            <td> <%= prodectRecord[i].rearcamera %> </td>
-                          </tr>
-
-                          <tr> 
-                            <th> <b> Font Camera: </b> </th> 
-                           <td> <%= prodectRecord[i].fontcamera %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> Battery: </b> </th>
-                            <td> <%= prodectRecord[i].battery %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> Sim Support: </b> </th>
-                            <td> <%= prodectRecord[i].simSupport %> </td>
-                          </tr>
-
-                          <tr>
-                            <th><b> Color: </b></th>
-                            <td> <%= prodectRecord[i].color %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> Operating System: </b> </th>
-                            <td> <%= prodectRecord[i].operatingSystem %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> Warranty: </b> </th>
-                            <td> <%= prodectRecord[i].warranty %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> PTA: </b> </th>
-                            <td> <%= prodectRecord[i].pta %> </td>
-                          </tr>
-
-                          <tr>
-                            <th> <b> Price: </b> </th>
-                            <td> <%= prodectRecord[i].price %> </td>
-                          </tr>
-
-                        </table>
-                      </div>
+                      
 
                    <% } %> 
             <% } else { %>

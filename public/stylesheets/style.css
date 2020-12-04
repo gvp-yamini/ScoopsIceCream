@@ -21,7 +21,7 @@ footer {
     background-color: orange;
     width: 100%;
     bottom: 0;
-    position: absolute;
+    position: fixed;
 }
 
 html { font-size:100%; }

@@ -8,7 +8,7 @@ var category = categoryModel.find({}).sort({created_at: -1});
 var nodemailer = require("nodemailer");
 
 var productModel = require('../model/product');
-var product = productModel.find({}).sort({created_at: -1});
+var product = productModel.find({ isDeleted : false }).sort({created_at: -1});
 
 var orderModel = require('../model/buy-product')
 var order = orderModel.find({})

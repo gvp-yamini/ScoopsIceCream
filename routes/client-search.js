@@ -33,9 +33,7 @@ router.use(express.static(__dirname+"./public/"));
      var catRec;
     category.exec(function(err,catData){
         if(err) throw err
-        catRec = catData
-    });
-    
+        //catRec = catData
 
     var fltrName = req.body.fltrName;
     var reg = ".*" + fltrName + ".*";
@@ -46,9 +44,14 @@ router.use(express.static(__dirname+"./public/"));
         var fltrParameter = {}
     }
 
+    var perPage = 12;
+    var page =req.params.page || 1;
+
     productModel.find(fltrParameter).exec(function(err,data){
         if(err) throw err
-        res.render('client/view-product',{title:'Scoops Ice Cream Shop', prodectRecord:data,pages:pages,categoryRecord:catRec,loginUserInfo:loginUser })
+        pages = 1;
+        res.render('client/view-product',{title:'Scoops Ice Cream Shop', prodectRecord:data,pages:pages,categoryRecord:catData,current: 1,loginUserInfo:loginUser })
+    })
     })
   })
 

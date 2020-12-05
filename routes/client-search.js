@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 var categoryModel = require('../model/category');
-var category =categoryModel.find({});
+var category =categoryModel.find({ isDeleted : false });
 
 var productModel = require('../model/product');
-var product =productModel.find({}); 
+var product =productModel.find({ isDeleted : false }); 
 
 
 
@@ -29,15 +29,18 @@ router.use(express.static(__dirname+"./public/"));
     var loginUser = req.session.userId
 
     var pages;
-    // var cat;
-    category.exec(function(err, cat){
-      if(err) throw err
-      // cat= data
+
+     var catRec;
+    category.exec(function(err,catData){
+        if(err) throw err
+        catRec = catData
+    });
     
 
     var fltrName = req.body.fltrName;
+    var reg = ".*" + fltrName + ".*";
     if(fltrName != '') {
-        var fltrParameter = { $and: [{brand:fltrName},
+        var fltrParameter = { $and: [{product:{$regex : reg , $options : "i"}},
         ] } }
     else {
         var fltrParameter = {}
@@ -45,11 +48,9 @@ router.use(express.static(__dirname+"./public/"));
 
     productModel.find(fltrParameter).exec(function(err,data){
         if(err) throw err
-        res.render('client/view-product',{ prodectRecord:data,pages:pages,loginUserInfo:loginUser })
+        res.render('client/view-product',{title:'Scoops Ice Cream Shop', prodectRecord:data,pages:pages,categoryRecord:catRec,loginUserInfo:loginUser })
     })
   })
-  })
-
 
 
   module.exports = router;

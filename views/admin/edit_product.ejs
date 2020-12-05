@@ -33,7 +33,7 @@
       <div class="form-group">
                   <label for="categorydetails" class="col-md-3 control-label">Product Details</label>
                   <div class="col-md-9">
-                    <textarea type="text" class="form-control" name="categorydetails" placeholder=" Enter Details" id="editor" cols="30" rows="10"><%= productRecord.details %></textarea>
+                    <textarea type="text" class="form-control" name="productdetails" placeholder=" Enter Details" id="editor" cols="30" rows="10"><%= productRecord.details %></textarea>
                   </div>
               </div>
 
@@ -54,6 +54,13 @@
         </select>
         </div>
     </div>
+
+        <div class="form-group">
+        <label for="icode" class="col-md-3 control-label" > Brand Image</label>
+        <!-- <div class="col-md-9"> -->
+            <input type="file" class="form-control" name="file" multiple required>
+        <!-- </div> -->
+    </div> 
 
         <div class="col-md-offset-3 col-md-9">
             <span></span><br>

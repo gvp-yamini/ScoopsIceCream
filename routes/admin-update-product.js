@@ -59,26 +59,23 @@ next()
         catRec = catData
     })
 
+    var filename = req.files[0] && req.files[0].filename ? req.files[0].filename : '';
     var productdetails = productModel.findByIdAndUpdate(id,{
-        brand: req.body.brand,
-        ram: req.body.ram,
-        rom: req.body.rom,
-        rearcamera: req.body.rearcamera,
-        fontcamera: req.body.fontcamera,
-        battery: req.body.battery,
-        simSupport: req.body.simSupport,
-        color: req.body.color,
-        operatingSystem: req.body.operatingSystem,
-        warranty: req.body.warranty,
-        pta: req.body.pta,
+        product: req.body.product,
+        details:req.body.productdetails,
         price: req.body.price,
         category:req.body.category,
-        // images: req.files.filename
+        images : [filename]
     })
 
-    // for(var i = 0; i < req.files.length; i++) {
-    //     productdetails.images[i] = req.files[i] && req.files[i].filename ? req.files[i].filename : ''
-    //   }
+    /*console.log("test1");
+    productdetails.images = [];
+    for(var i = 0; i < req.files.length; i++) {
+         console.log(req.files.length);
+         console.log("req.files[i]"+req.files[i]);
+         console.log("req.files[i].filename"+req.files[i].filename);
+         productdetails.images[i] = req.files[i] && req.files[i].filename ? req.files[i].filename : '';
+      }*/
 
     productdetails.exec(function(err){
         if(err) throw err;

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var categoryModel = require('../model/category');
-var category =categoryModel.find({});
+var category =categoryModel.find({ isDeleted : false });
 
 var productModel = require('../model/product');
 var product =productModel.find({}); 
@@ -47,7 +47,7 @@ router.get("/",checkLoginUser,function(req,res,next){
   router.get('/delete/:id',checkLoginUser, function(req,res, next){
     var loginUser = req.session.adminName
 
-    categoryModel.findByIdAndDelete({_id:req.params.id}).exec(function(err){
+    categoryModel.findByIdAndUpdate({_id:req.params.id},{ isDeleted : true }).exec(function(err){
     if(err) throw err
     category.exec(function(err,data){
       res.redirect('/admin/ViewCategory')

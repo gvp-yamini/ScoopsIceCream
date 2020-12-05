@@ -31,9 +31,9 @@ router.use(express.static(__dirname+"./public/"));
   router.get('/',checkLoginUser, function(req,res, next){
       var loginadmin = req.session.adminName
 
-      categoryModel.countDocuments({}).exec(function(err,countCategory){
+      categoryModel.countDocuments({ isDeleted : false }).exec(function(err,countCategory){
             if(err) throw err
-            productModel.countDocuments({}).exec(function(err,countProduct){
+            productModel.countDocuments({ isDeleted : false }).exec(function(err,countProduct){
                   if(err) throw err
                   orederModel.countDocuments({}).exec(function(err,countOrder){
                         if(err) throw err

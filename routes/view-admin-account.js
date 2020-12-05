@@ -33,7 +33,7 @@ router.get('/',checkLoginUser,function(req,res,next){
 
   account.exec(function(err,data){
     if(err) throw err
-    res.render('admin/view-admin-account',{title:'Mobile',adminAcountRecord:data,loginUser:loginUser })
+    res.render('admin/view-admin-account',{title:'Scoops Ice Cream Shop',adminAcountRecord:data,loginUser:loginUser })
   })
 })
 

@@ -19,7 +19,7 @@ router.use(express.static(__dirname+"./public/"));
 
       category.exec(function(err, data){
         if (err) throw err
-        res.render('client/header',{title:'Scoops',categoryRecord:data,loginUserInfo:loginUser, success:''})
+        res.render('client/header',{title:'Scoops Ice Cream Shop',categoryRecord:data,loginUserInfo:loginUser, success:''})
       })
   })
 

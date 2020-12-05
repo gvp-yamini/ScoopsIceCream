@@ -16,13 +16,13 @@
           <strong>Success!</strong> <%= success %> 
          <% } %>
         </div>
-<div class="container">
+<div class="container" style="width:50%">
     <a class="btn btn-info" href="/admin/ViewProduct" >View Product</a>
 
   <h2 style="text-align: center;">Update Product</h2>
   <div style=" text-align: center;">
   </div>
-  <form class="form-inline" action="/admin/update-product/<%= productRecord._id %> " method="post"  enctype="multipart/form-data">
+  <form class="form-group" action="/admin/update-product/<%= productRecord._id %> " method="post"  enctype="multipart/form-data">
 
     <input type="hidden" name="id" value="<%= productRecord._id %> ">
 
@@ -38,20 +38,26 @@
               </div>
 
     <div class="form-group">
+        <label for="categoryprice" class="col-md-3 control-label">Product Price</label>
+         <div class="col-md-9">
         <input type="text" class="form-control" placeholder="Price" name="price" value="<%= productRecord.price %>" required>
     </div>
+    </div>
 
-    <div class="col-md-9">
+    <div>
+        <label for="categoryselect" class="col-md-3 control-label">Category</label>
+        <div class="col-md-9">
         <select class="form-control" name="category" >
             <% categoryRecord.forEach(function(data){%>
             <option value="<%= data.name %>" <% if(data.name == productRecord.category) {%>selected<%}%>><%= data.name %></option>
             <% }) %>   
         </select>
+        </div>
     </div>
 
-    <br>
         <div class="col-md-offset-3 col-md-9">
-         <input type="submit" name="submit" value="Update Product" class="btn btn-primary">   
+            <span></span><br>
+         <input type="submit" name="submit" value="Update Product" class="btn btn-primary">  
         </div>  
     </form>
 </div>

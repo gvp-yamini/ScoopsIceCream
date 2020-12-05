@@ -10,6 +10,7 @@ var productSchema =new mongoose.Schema({
     price: {type:Number, required:true},
     images: [String],
     category: String,
+    isDeleted: {type:Boolean,default:false},
     created_at: {type:Date, required:true, default:Date.now}
 
 });

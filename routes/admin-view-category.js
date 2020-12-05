@@ -39,7 +39,7 @@ router.get("/",checkLoginUser,function(req,res,next){
   var loginUser = req.session.adminName
   category.exec(function(err,data){
     if(err) throw err
-    res.render('admin/admin-view-category',{title:'Mobile',categoryRecord:data, loginUser:loginUser})
+    res.render('admin/admin-view-category',{title:'Scoops Ice Cream Shop',categoryRecord:data, loginUser:loginUser})
     
   })
 })

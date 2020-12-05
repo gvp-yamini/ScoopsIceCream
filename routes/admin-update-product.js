@@ -43,7 +43,7 @@ next()
 
     productModel.findById({_id:id}).exec(function(err,data){
         if(err) throw err;
-        res.render('admin/edit_product', { title:'Mobile',success:'', productRecord:data,loginUser:loginUser,categoryRecord:catRec});
+        res.render('admin/edit_product', { title:'Scoops Ice Cream Shop',success:'', productRecord:data,loginUser:loginUser,categoryRecord:catRec});
     })
   
   });
@@ -84,7 +84,7 @@ next()
         if(err) throw err;
     productModel.findById({_id:id}).exec(function(err,data){
         if(err) throw err;
-        res.render('admin/edit_product', { title:'Mobile',success:'', productRecord:data,loginUser:loginUser,categoryRecord:catRec, success:'Updated Successfully'});
+        res.render('admin/edit_product', { title:'Scoops Ice Cream Shop',success:'', productRecord:data,loginUser:loginUser,categoryRecord:catRec, success:'Updated Successfully'});
     })
     })
 

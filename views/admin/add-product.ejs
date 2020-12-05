@@ -16,13 +16,13 @@
           <strong>Success!</strong> <%= success %> 
          <% } %>
         </div>
-<div class="container">
-    <a class="btn btn-info" href="/admin/ViewProduct" >View Product</a>
+<div class="container" style="width:50%">
+    <a class="btn btn-info" href="/admin/ViewProduct" >View Products</a>
 
   <h2 style="text-align: center;">Add product</h2>
   <div style=" text-align: center;">
   </div>
-  <form class="form-inline" action="/admin/add-product" method="post"  enctype="multipart/form-data">
+  <form class="form-group" action="/admin/add-product" method="post"  enctype="multipart/form-data">
 
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Product Name" name="product" required>
@@ -36,15 +36,21 @@
     </div>
 
     <div class="form-group">
+        <label for="categoryprice" class="col-md-3 control-label">Product Price</label>
+        <div class="col-md-9">
         <input type="text" class="form-control" placeholder="Price" name="price" required>
+         </div>
     </div>
 
-    <div class="col-md-9">
+    <div>
+        <label for="categoryselect" class="col-md-3 control-label">Category</label>
+        <div class="col-md-9">
         <select class="form-control" name="category" >
             <% categoryRecord.forEach(function(data){%>
                 <option value="<%= data.name %>"><%= data.name %></option>
             <% }) %>
         </select>
+        </div>
     </div>
 
     <div class="form-group">

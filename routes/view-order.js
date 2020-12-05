@@ -36,7 +36,7 @@ next()
       if(err) throw err;
       buyModel.countDocuments({}).exec((err,count)=>{    
 
-        res.render('admin/view-order',{title:'Mobile',orderRecord:data,
+        res.render('admin/view-order',{title:'Scoops Ice Cream Shop',orderRecord:data,
         current: page,
         pages: Math.ceil(count / perPage),
         loginUser:loginUser
@@ -59,7 +59,7 @@ next()
     .limit(perPage).populate('user').populate('product').exec(function(err,data){
       if(err) throw err;
       buyModel.countDocuments({}).exec((err,count)=>{    
-        res.render('admin/view-order',{title:'Mobile',orderRecord:data,
+        res.render('admin/view-order',{title:'Scoops Ice Cream Shop',orderRecord:data,
         current: page,
         pages: Math.ceil(count / perPage),
         loginUser:loginUser

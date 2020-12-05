@@ -41,7 +41,7 @@ router.use(express.static(__dirname+"./public/"));
                               if(err) throw err
                               accountModel.countDocuments({}).exec(function(err,countSignup){
                                 if (err) throw err
-                                res.render('admin/adminDashboard',{title:' Mobile',
+                                res.render('admin/adminDashboard',{title:'Scoops Ice Cream Shop',
                                 countCategory:countCategory,
                                 countProduct:countProduct,
                                 countOrder:countOrder,

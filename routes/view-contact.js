@@ -34,7 +34,7 @@ next()
     .limit(perPage).exec(function(err,data){
       if(err) throw err;
       contactModel.countDocuments({}).exec((err,count)=>{   
-        res.render('admin/view-contact',{title:'Mobile',contactRecord:data,
+        res.render('admin/view-contact',{title:'Scoops Ice Cream Shop',contactRecord:data,
         current: page,
         pages: Math.ceil(count / perPage),
         loginUser:loginUser
@@ -58,7 +58,7 @@ next()
     .limit(perPage).exec(function(err,data){
       if(err) throw err;
       contactModel.countDocuments({}).exec((err,count)=>{    
-        res.render('admin/view-contact',{title:'Mobile',contactRecord:data,
+        res.render('admin/view-contact',{title:'Scoops Ice Cream Shop',contactRecord:data,
         current: page,
         pages: Math.ceil(count / perPage),
         sNo: sNo,

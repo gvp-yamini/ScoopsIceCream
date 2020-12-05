@@ -25,7 +25,7 @@ next()
   router.get('/',checkLoginUser, function(req,res, next){
     var loginUser = req.session.adminName
 
-        res.render('admin/adminHeader',{title:'Mobile',success:'',loginUser:loginUser})
+        res.render('admin/adminHeader',{title:'Scoops Ice Cream Shop',success:'',loginUser:loginUser})
   })
 
   router.post('/',checkLoginUser, function(req, res, next){
@@ -43,7 +43,7 @@ next()
 
     productModel.find(fltrParameter).exec(function(err,data){
         if(err) throw err
-        res.render('admin/admin-view-product',{title:'Mobile', prodectRecord:data,pages:pages,loginUser:loginUser })
+        res.render('admin/admin-view-product',{title:'Scoops Ice Cream Shop', prodectRecord:data,pages:pages,loginUser:loginUser })
     })
     
   })

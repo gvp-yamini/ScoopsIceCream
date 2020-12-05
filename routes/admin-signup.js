@@ -34,7 +34,7 @@ function checkEmail(req, res, next){
     checkExitEmail.exec((err, data)=>{
       if (err) throw err;
       if (data) {
-        return res.render('admin/signup', { title: 'Mobile', msg:"Email Already Exit" });
+        return res.render('admin/signup', { title: 'Scoops Ice Cream Shop', msg:"Email Already Exit" });
       }
       next()
     })
@@ -46,7 +46,7 @@ function checkEmail(req, res, next){
     checkExitUserName.exec((err, data)=>{
       if (err) throw err;
       if (data) {
-        return res.render('admin/signup', { title: 'Mobile', msg:"UserName Already Exit" });
+        return res.render('admin/signup', { title: 'Scoops Ice Cream Shop', msg:"UserName Already Exit" });
       }
       next()
     })
@@ -54,7 +54,7 @@ function checkEmail(req, res, next){
   
 
   router.get('/',checkLoginUser, function(req,res, next){
-        res.render('admin/signup',{title:'Mobile',msg:''})
+        res.render('admin/signup',{title:'Scoops Ice Cream Shop',msg:''})
   })
 
   router.post('/',checkLoginUser, checkUserName,checkEmail, function(req, res, next) {
@@ -64,7 +64,7 @@ function checkEmail(req, res, next){
     var confpassword = req.body.confpassword;
   
     if(password != confpassword) {
-      res.render('admin/signup', { title: 'Mobile', msg:'Password Not Matched!' });
+      res.render('admin/signup', { title: 'Scoops Ice Cream Shop', msg:'Password Not Matched!' });
     }
     else {
       password = bcrypt.hashSync(req.body.password, 10)
@@ -76,7 +76,7 @@ function checkEmail(req, res, next){
   
       signupDetails.save((err,doc)=>{
         if (err) throw err;
-        res.render('admin/signup', { title: 'Mobile', msg:'User Register Successfully' });
+        res.render('admin/signup', { title: 'Scoops Ice Cream Shop', msg:'User Register Successfully' });
       });
     }
     

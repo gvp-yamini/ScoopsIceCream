@@ -39,7 +39,7 @@ var bcrypt = require('bcryptjs');
     var id = req.params.id;
     var getCategory = categoryModel.findById({_id:id});
     getCategory.exec(function(err,data){
-      res.render('admin/edit_category',{title:'Mobile',categoryRecord:data,loginUser:loginUser,success:''})
+      res.render('admin/edit_category',{title:'Scoops Ice Cream Shop',categoryRecord:data,loginUser:loginUser,success:''})
     })
   })
 
@@ -54,7 +54,7 @@ var bcrypt = require('bcryptjs');
   
     var getCategory = categoryModel.findById({_id:id});
     getCategory.exec(function(err,data){
-      res.render('admin/edit_category',{title:'Mobile',categoryRecord:data,loginUser:loginUser,success:'Updated Successfully'})
+      res.render('admin/edit_category',{title:'Scoops Ice Cream Shop',categoryRecord:data,loginUser:loginUser,success:'Updated Successfully'})
     })
   })
 })

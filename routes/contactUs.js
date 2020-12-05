@@ -27,7 +27,7 @@ router.use(express.static(__dirname+"./public/"));
       if(err) throw err
     
       category.exec(function(err, data){
-        res.render('client/contact_us',{title:'Mobile',contactRecord:contactData,categoryRecord:data,success:'',loginUserInfo:loginUser,userData:userdata})
+        res.render('client/contact_us',{title:'Scoops Ice Cream Shop',contactRecord:contactData,categoryRecord:data,success:'',loginUserInfo:loginUser,userData:userdata})
       })
     })
   })
@@ -57,7 +57,7 @@ router.use(express.static(__dirname+"./public/"));
       if(err) throw err
       contact.exec(function(err,data){
         if(err) throw err
-        res.render('client/contact_us',{title:'Mobile',contactRecord:data,categoryRecord:cat, success:'Message send successfully',loginUserInfo:loginUser,userData:userdata})
+        res.render('client/contact_us',{title:'Scoops Ice Cream Shop',contactRecord:data,categoryRecord:cat, success:'Message send successfully',loginUserInfo:loginUser,userData:userdata})
 
       })
     })

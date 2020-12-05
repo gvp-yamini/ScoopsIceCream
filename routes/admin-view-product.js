@@ -34,7 +34,7 @@ next()
     .limit(perPage).exec(function(err,data){
       if(err) throw err;
       productModel.countDocuments({}).exec((err,count)=>{    
-        res.render('admin/admin-view-product',{title:'Mobile', 
+        res.render('admin/admin-view-product',{title:'Scoops Ice Cream Shop', 
         prodectRecord: data, 
         current: page,
         pages: Math.ceil(count / perPage),
@@ -69,7 +69,7 @@ next()
     .limit(perPage).exec(function(err,data){
       if(err) throw err;
       productModel.countDocuments({}).exec((err,count)=>{    
-        res.render('admin/admin-view-product',{title:'Mobile',
+        res.render('admin/admin-view-product',{title:'Scoops Ice Cream Shop',
         prodectRecord: data,   
         current: page,
         pages: Math.ceil(count / perPage),

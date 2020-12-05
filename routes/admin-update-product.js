@@ -3,7 +3,7 @@ var router = express.Router();
 
 var productModel = require('../model/product');
 var categoryModel = require('../model/category');
-var category = categoryModel.find({});
+var category = categoryModel.find({ isDeleted : false });
 var multer  = require('multer');
 var path = require('path');
 router.use(express.static(__dirname+"./public/"));

@@ -35,7 +35,7 @@ next()
 
     var fltrName = req.body.fltrName;
     if(fltrName != '') {
-        var fltrParameter = { $and: [{brand:fltrName},
+        var fltrParameter = { $and: [{product:fltrName},
         ] } }
     else {
         var fltrParameter = {}
